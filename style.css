@@ -1,4 +1,4 @@
-:root{
+ :root{
     --clr-primario-400: #473BF0;
     --clr-primario-300: #6665DD;
     --clr-primario-200: #9B9ECE;
@@ -31,12 +31,14 @@ body{
 .nav-titulo{
     color: #473BF0;
 }
+#btn-buscar{
+    color: #473BF0;
+    background-color: #9B9ECE;
+}
 /* fin navbar */
 
 /* banner */
 .banner{
-    
-    /* background-image: url('../img/batman.jpg'); */
     background: linear-gradient(rgba(0,0,0,.5) 0%, rgba(0,0,0,.5)100%), url('../img/batman.jpg');
     background-position: center center;
     background-size:cover;
@@ -82,40 +84,66 @@ button:hover, .button:focus-visible{
     width: 100%;
     /* overflow: scroll; */
     opacity: 1;
+    max-height: 500px;
 }
 .carrusel-fila--inner{
     transition: 350ms transform;
     font-size: 0;
     white-space: nowrap;
-    margin: auto ;
-    padding-bottom: 10px;  
-    padding-top: 1.5rem;
+    margin: auto 0;
+    padding-bottom: 3rem;  
+    padding-top: 3rem;
+    max-height: 500px;
 }
 .carrusel-fila--item{
     display: inline-block;
     background-color: gray;
     width: 250px;
-    height: 140px;
-    margin-right: 10px;
+    height: auto;
+    margin-right: 16px;
     cursor: pointer;
     transition: 350ms  ease-in-out;
     transform-origin: center;
-    opacity: .3;
+    opacity: .7;
     border-radius: 1rem;
 }
+.img-card{
+    max-height:100%;
+    max-width: 100%;
+    object-fit: contain;
+    border-radius: 1rem;
+}
+.button-card{
+    position: relative;
+    top: 150px;
+    left: -240px;
+    border: none;
+    cursor: pointer;
+    border-radius: 100vmax;
+    padding: .5em 1em;
+    margin-left: .2rem;
+    font-weight: 500;
+    font-size:large;
+    color: #fff;
+    background-color: #473BF0;
+    z-index: 2;
+}
+
 .carrusel-fila--item:first-child{
     transform-origin: left;
+    z-index: 1;
 }
 .carrusel-fila--item:last-child{
     transform-origin: right;
+    z-index: 1;
 }
 /* .carrusel-fila--inner:hover{
     transform: translate3d(140*(1.5 - 1)/2);
 } */
 .carrusel-fila--item:hover{
     opacity: 1;
-    scale: 1.3;
-    z-index: 2;
+    scale: 1.2;
+    z-index: 1;
 }
 
 .titulo-categoria{
@@ -124,9 +152,18 @@ button:hover, .button:focus-visible{
     padding-top: 1rem;
     color: #473BF0;
 }
-.titulo-categoria::after{
+/* .titulo-categoria::after{
+    content: "";
+    display: block;
+    width: 180px;
+    padding-top: 3px;
+    border-bottom: 2px;
+    background: linear-gradient(to left, #473BF0 0%, #6665DD 100%);
+    background-position: 0 100%;
+    background-size: 100% 6px;
+    background-repeat: repeat-x;
+} */
 
-}
 /* fin carrusel */
 
 /* footer */
