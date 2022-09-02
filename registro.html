@@ -20,34 +20,44 @@
         
         <section  class=" modalContentRegistro text-center position-absolute top-50 start-50 translate-middle"aria-hidden="true">
             <div class="header "><img class="rounded-pill imgLogin" src="./assets/IMG/img-registro.gif" alt=""></div>
-            <form class="col-12" >
+            <form class="col-12" id="formDeRegistro">
                 <div class="form-group mt-3">
-                    <label for="name">Nombre completo </label>
+                    <label for="inputNombreDeUsuario">Nombre completo </label>
                     <i class="fa fa-user"></i>
-                    <input class="form-control formStyle mt-3 " type="text" placeholder="Ingrese su nombre y apellido" required>
+                    <input class="form-control formStyle mt-3 " id="inputNombreDeUsuario" type="text" placeholder="Ingrese su nombre y apellido" required>
+                    <i class="formularioValidacion fa fa-circle-xmark"></i>
+                    <p class="inputErrorDeFormulario"> El nombre solo puede contener letras.</p>
                 </div>
                 <div class="form-group mt-3">
-                    <label for="E-mail">E-mail </label>
+                    <label for="inputEmailDeUsuario">E-mail </label>
                     <i class="fa fa-envelope"></i>                    
-                    <input class="form-control formStyle mt-3 " type="email" placeholder="Ingrese su correo" required>
+                    <input class="form-control formStyle mt-3 " type="email" id="inputEmailDeUsuario" placeholder="Ingrese su correo" required>
+                    <i class="formularioValidacion fa fa-circle-xmark"></i>
+                    <p class="inputErrorDeFormulario"> El nombre solo puede contener letras.</p>
                 </div>
                 <div class="form-group mt-3">
-                    <label for="phone">Telefono movil </label>
+                    <label for="inputPhoneDeUsuario">Telefono movil </label>
                     <i class="fa fa-mobile"></i>
-                    <input class="form-control formStyle mt-3 " type="tel" placeholder="Ingrese su número de teléfono movil" required>
+                    <input class="form-control formStyle mt-3 " type="tel" id="inputPhoneDeUsuario" placeholder="Ingrese su número de teléfono movil" required>
+                    <i class="formularioValidacion fa fa-circle-xmark"></i>
+                    <p class="inputErrorDeFormulario"> El nombre solo puede contener Números.</p>
                 </div>
                 <div class="form-group mt-3">
-                    <label  for="password">Pass </label>
+                    <label  for="inputPassDeUsuario">Pass </label>
                     <i class="fa fa-key"></i>
-                    <input class="form-control formStyle mt-3 " type="password" placeholder="***********" required>
+                    <input class="form-control formStyle mt-3 " type="password" id="inputPassDeUsuario" placeholder="***********" required>
+                    <i class="formularioValidacion fa fa-circle-xmark"></i>
+                    <p class="inputErrorDeFormulario"> La contraseña debe tener un minimo de 8 y un maximo de 16 caracteres.</p>
                     
                 </div>
                 <div class="form-group mt-3">
                     <label  for="password">Repetir Pass </label>
                     
                     <input class="form-control formStyle mt-3 " type="password" placeholder="***********" required>
+                    <i class="formularioValidacion fa fa-circle-xmark danger"></i>
+                    <p class="inputErrorDeFormulario"> Las contraseñas no coinciden.</p>
                 </div>
-                <div class="form-group mt-4">
+                <div class="form-group mt-4 ">
                     
                     <button class="buttonForm mt-1"><i class="fa fa-sign-in" aria-hidden="true"></i> Registrate</button>
                     

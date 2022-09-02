@@ -20,6 +20,7 @@ body{
     opacity: 0.95;
     font-family:'Comfortaa', cursive;
     font-size: 20px;
+    margin-bottom:500px;
 }
 .modalContentRegistro{
     position: relative;
