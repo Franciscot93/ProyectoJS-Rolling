@@ -25,7 +25,7 @@ body{
 .modalContentRegistro{
     position: relative;
     display: inline-block;
-    width: 75%;
+    width: 55%;
     color: #473BF0;
     border:5px solid #473BF0;
     border-radius: 35px;
@@ -58,17 +58,10 @@ body{
 } */
 
 
-/* 
-.formStyle {
 
-    flex-grow: 100;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    text-decoration: none;
-} */
+.formStyle {position:relative
+}
+   
 
 .buttonForm {
 
@@ -108,16 +101,50 @@ body{
     border: 2px solid #473BF0;
     transition: 0.3s;
 }
+.inputErrorDeFormulario{
+    display: none;
+    color: #df3f37;
+    
+}
+.input
+.inputErrorDeFormulario p{
+    margin: 0px;
+}
 
+
+.inputErrorDeFormulario-activo{
+    display: block;
+    color: #df3f37;
+}
 
 @media only screen and (min-width: 768px) {
     section {
         width: 30em;
     }
+   
+    
+   
 }
 
 
 .form-group a {
     text-decoration: none;
-    color: #9B9ECE;
+    color: #9B9ECE;}
+
+.iconoDeError{
+color: #df3f37;
+    }
+
+.fas ,.fa-check{
+    color: #51e60d;
+    display: none;
+}
+
+
+
+.form-group-correcto{
+    opacity: 0;
+}
+.form-group-correcto .activo{
+    opacity: 1;
 }
