@@ -24,58 +24,58 @@
                 <div class="form-group mt-3  " id="nombreCompleto">
                     <label for="inputNombreDeUsuario">Nombre completo </label>
                     <i class="fa fa-user"></i>
-                    <input class="form-control formStyle mt-3 " name="inputNombreDeUsuario" id="inputNombreDeUsuario" type="text" placeholder="Ingrese su nombre y apellido" required> <i id="checkNombre" class="form-group-correcto float-end fas fa-check"></i>
+                    <input class="form-control formStyle mt-3 " name="inputNombreDeUsuario" id="inputNombreDeUsuario" type="text" placeholder="Ingrese su nombre y apellido" required> <i id="checkNombre" class='form-group-correcto float-end fas fa-check'></i>
                     
-                    <p class="inputErrorDeFormulario-activo"> El nombre solo puede contener letras, espacios y acentos.</p>
+                    <p id="mensajeErrorNombreUsuario"class="inputErrorDeFormulario"> <span><i class="fas fa-triangle-exclamation"></i></span> El nombre solo puede contener letras, espacios y acentos.</p>
                 </div>
                 
                 <div class="form-group mt-3 " id="">
                     <label for="inputEmailDeUsuario">E-mail </label>
                     <i class="fa fa-envelope"></i>                    
-                    <input class="form-control formStyle mt-3 " name="inputEmailDeUsuario" type="email" id="inputEmailDeUsuario" placeholder="Ingrese su correo" required><i class="float-end fas fa-check"></i>
+                    <input class="form-control formStyle mt-3 " name="inputEmailDeUsuario" type="email" id="inputEmailDeUsuario" placeholder="Ingrese su correo" required><i id="checkNombre1" class="form-group-correcto float-end fas fa-check"></i>
                     
-                    <p class="inputErrorDeFormulario"> El nombre solo puede contener letras.</p>
+                    <p id="mensajeErrorEmailUsuario" class="inputErrorDeFormulario"> Ingrese una direccion de e-mail valida.</p>
                 </div>
                 <div class="form-group mt-3 " id="">
                     <label for="inputFechaDeNacimiento">Fecha de Naciemiento </label>
                     <i class="fa fa-calendar-week"></i>
-                    <input class="form-control formStyle mt-3 " name="inputFechaDeNacimiento" type="date" id="inputFechaDeNacimiento" placeholder="" required><i class="float-end fas fa-check"></i>
+                    <input class="form-control formStyle mt-3 " name="inputFechaDeNacimiento" type="date" id="inputFechaDeNacimiento" placeholder="" required><i class=" form-group-correcto float-end fas fa-check"></i>
                     
                     
-                    <p class="inputErrorDeFormulario"> No eres mayor de 18 años.</p>
+                    <p id="mensajeErrorNombreUsuario2" class="inputErrorDeFormulario"> No eres mayor de 18 años.</p>
                 </div>
                 <div class="form-group mt-3 " id="">
                     <label for="inputPhoneDeUsuario">Telefono movil </label>
                     <i class="fa fa-mobile"></i>
-                    <input class="form-control formStyle mt-3 " name="inputPhoneDeUsuario" type="tel" id="inputPhoneDeUsuario" placeholder="Ingrese su número de teléfono movil" required><i class=" float-end fas fa-check"></i>
+                    <input class="form-control formStyle mt-3 " name="inputPhoneDeUsuario" type="tel" id="inputPhoneDeUsuario" placeholder="Ingrese su número de teléfono movil" minlength="10" maxlength="14" required><i id="checkNombre2" class=" form-group-correcto float-end fas fa-check"></i>
                     
-                    <p class="inputErrorDeFormulario"> Solo puede contener caracteres númericos.</p>
+                    <p id="mensajeErrorTelefonoUsuario" class="inputErrorDeFormulario"> Solo puede contener caracteres númericos. Ingrese un número de telefono valido por favor.</p>
                 </div>
                 <div class="form-group mt-3 " id="">
                     <label  for="inputPassDeUsuario">Pass </label>
                     <i class="fa fa-key"></i>
-                    <input class="form-control formStyle mt-3 " name="inputPassDeUsuario" type="password" id="inputPassDeUsuario" placeholder="***********" required><i class="float-end fas fa-check"></i>
+                    <input class="form-control formStyle mt-3 " name="inputPassDeUsuario" type="password" id="inputPassDeUsuario" placeholder="***********" required maxlength="16" minlength="8"><i id="checkNombre3" class=" form-group-correcto float-end fas fa-check"></i>
                     
-                    <p class="inputErrorDeFormulario"> La contraseña debe tener un minimo de 8 y un maximo de 16 caracteres.</p>
+                    <p id="mensajeErrorPassUsuario" class="inputErrorDeFormulario"> La contraseña debe tener un minimo de 8 y un maximo de 16 caracteres.</p>
                     
                 </div>
                 <div class="form-group mt-3 " id="">
                     <label  for="inputPass2DeUsuario">Repetir Pass </label>
                     
-                    <input class="form-control formStyle mt-3 " name="inputPass2DeUsuario" id="inputPass2DeUsuario" type="password" placeholder="***********" required><i class="float-end fas fa-check"></i>
+                    <input class="form-control formStyle mt-3 " name="inputPass2DeUsuario" id="inputPass2DeUsuario" type="password" placeholder="***********" required maxlength="16" minlength="8"><i id="checkNombre4" class="form-group-correcto float-end fas fa-check"></i>
                     
-                    <p class="inputErrorDeFormulario"> Las contraseñas no coinciden.</p>
+                    <p id="mensajeErrorRepPasUsuario" class="inputErrorDeFormulario"> Las contraseñas no coinciden.</p>
                 </div>
                 <div class="form-group mt-5 ">
                     
                     <button type="submit" class="buttonForm mt-1"><i class="fa fa-sign-in" aria-hidden="true"></i> Registrate</button>
-                    <p class="inputErrorDeFormulario">DEBES COMPLETAR EL FORMULARIO</p>
+                    <p id="mensajeErrorNombreUsuario6" class="inputErrorDeFormulario">DEBES COMPLETAR EL FORMULARIO</p>
                 </div>
                 
             </form>
             <div class="form-group  mb-3 mt-4>
                     <label for="saveAccount">Acepto los terminos <a href="">Terminos y condiciones</a></label><input class="input-group" type="checkbox" name="saveAccount" id="">
-                    <p class="inputErrorDeFormulario"> ¿Los has leído?</p>
+                    <p id="mensajeErrorNombreUsuario" class="inputErrorDeFormulario"> ¿Los has leído?</p>
                 </div>
             <div class="footer"><div class="form-group  mb-3 mt-3">
                 <a href="./login.html">¿Ya tienes cuenta?</a>

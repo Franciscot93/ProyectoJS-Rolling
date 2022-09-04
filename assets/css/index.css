@@ -113,6 +113,7 @@ body{
 
 
 .inputErrorDeFormulario-activo{
+    margin-top: 4px;
     display: block;
     color: #df3f37;
 }
@@ -145,6 +146,6 @@ color: #df3f37;
 .form-group-correcto{
     opacity: 0;
 }
-.form-group-correcto .activo{
+.form-group-correcto-activo{
     opacity: 1;
 }
