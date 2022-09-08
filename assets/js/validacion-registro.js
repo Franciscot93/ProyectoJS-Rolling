@@ -16,21 +16,37 @@ const camposDelFormulario={
     password:false,
     correo:false,
     telefono:false,
+    terminos:false,
    
 
 };
 
+const nombreDelUsuario= document.getElementById('inputNombreDeUsuario'); 
+const emailDelUsuario= document.getElementById('inputEmailDeUsuario'); 
+const telefonoDelUsuario= document.getElementById('inputPhoneDeUsuario'); 
+const passDelUsuario= document.getElementById('inputPassDeUsuario'); 
+const passDelUsuario2= document.getElementById('inputPass2DeUsuario'); 
+const mensajeErrorDeForm= document.getElementById('mensajeErrorDeForm'); 
+const btnRegistro= document.getElementById('btnRegistro').addEventListener('click',e=>validarFormularioDeRegistro(e)); 
+
 
 const validarFormularioDeRegistro=(e)=>{
+
+
+    mensajeErrorDeForm.innerHTML=`<p class"inputErrorDeFormulario-activo mt-3 mb-3"><i class="fas fa-triangle-exclamation inputErrorDeFormulario-activo "></i> DEBES COMPLETAR EL FORMULARIO.</p> `;
  
     
-    
+    e.preventDefault();
     
  
     switch(e.target.name){
     case "inputNombreDeUsuario":
+        
+
 
     validarInputDeRegistro(expresiones.nombre, e.target, 'inputNombreDeUsuario');
+     
+    console.log(nombreDelUsuario.value);
 
     //     const iconoCheck= document.getElementById('checkNombre').classList.add('form-group-correcto-activo');
   
@@ -38,6 +54,7 @@ const validarFormularioDeRegistro=(e)=>{
 
     // (expresiones.nombre.test(e.target.value)) ? ((iconoCheck)(document.getElementById('mensajeErrorNombreUsuario').classList.remove('inputErrorDeFormulario-activo'))) : (mensajeErrorValidacion)(document.getElementById('checkNombre').classList.remove('form-group-correcto-activo'));
 
+    
     break;
 
     case "inputEmailDeUsuario":
@@ -66,7 +83,8 @@ const validarFormularioDeRegistro=(e)=>{
      break;
      case "inputPassDeUsuario":
         validarInputDeRegistro(expresiones.password, e.target, 'inputPassDeUsuario');
-        validarPassword2();
+        // validarPassword2();        
+        
 
         // const iconoPass= document.getElementById('checkNombre3').classList.add('form-group-correcto-activo');
         // const mensajeErrorPassValidacion= document.getElementById('mensajeErrorPassUsuario').classList.add('inputErrorDeFormulario-activo');
@@ -75,7 +93,18 @@ const validarFormularioDeRegistro=(e)=>{
 
      break;
      case "inputPass2DeUsuario":
-        validarPassword2();
+        // validarPassword2();
+        claveCorrecta();
+        
+
+    break;
+
+    case "terminos":
+        const terminos= document.getElementById('terminos');
+        
+
+        (terminos.checked = true) ? ((document.getElementById('checked-terminos').classList.add('form-group-correcto-activo'))(document.getElementById('checked-terminos').classList.remove('form-group-correcto'))(camposDelFormulario.terminos=true)):((document.getElementById('mensajeError-checked').classList.add('inputErrorDeFormulario-activo'))(document.getElementById('mensajeError-checked').classList.remove('inputErrorDeFormulario')))
+        
 
     break;
 
@@ -85,60 +114,91 @@ const validarFormularioDeRegistro=(e)=>{
 
 const validarInputDeRegistro =(expresiones, input, campo)=>{
     
-    const iconoCheck= document.getElementById(`check-${campo}`).classList.add('form-group-correcto-activo');
-    const mensajeErrorValidacion= document.getElementById(`mensajeError-${campo}`).classList.add('inputErrorDeFormulario-activo');
+    const iconoCheck = (document.getElementById(`check-${campo}`)).classList.add('form-group-correcto-activo');
+    const mensajeErrorValidacion = (document.getElementById(`mensajeError-${campo}`)).classList.add('inputErrorDeFormulario-activo');
     
     
-    ((expresiones.test(input.value)) && input.value !=='') ? ((iconoCheck)(document.getElementById(`mensajeError-${campo}`).classList.remove('inputErrorDeFormulario-activo')))(camposDelFormulario[campo]=true) : (mensajeErrorValidacion)(document.getElementById(`check-${campo}`).classList.remove('form-group-correcto-activo'))(camposDelFormulario[campo]=false) ;
+    ((expresiones.test(input.value)) && input.value !=='') ? (iconoCheck)
+     (document.getElementById(`mensajeError-${campo}`).classList.remove('inputErrorDeFormulario-activo'))
+     (camposDelFormulario[campo]=true)
+     :((mensajeErrorValidacion)(document.getElementById(`check-${campo}`).classList.remove('form-group-correcto-activo'))(camposDelFormulario[campo]=false) );
     
 
 
 }
 
-const validarPassword2=()=>{
+// const validarPassword2=()=>{
+//     const inputPassword1 = document.getElementById('inputPassDeUsuario');
+//     const inputPassword2 = document.getElementById('inputPass2DeUsuario');
+
+
+//    if (inputPassword1.value == inputPassword2.value && inputPassword2.value !==""){
+//     document.getElementById('mensajeError-inputPass2DeUsuario').classList.remove('inputErrorDeFormulario-activo');
+//     document.getElementById('mensajeError-inputPass2DeUsuario').classList.add('inputErrorDeFormulario');
+//     document.getElementById('check-inputPass2DeUsuario').classList.add('form-group-correcto-activo');
+//     document.getElementById('check-inputPass2DeUsuario').classList.remove('form-group-correcto');
+//     (camposDelFormulario['inputPassDeUsuario']=true) ;
+
+
+//    } else {
+//     document.getElementById('mensajeError-inputPass2DeUsuario').classList.add('inputErrorDeFormulario-activo');
+//     document.getElementById('mensajeError-inputPass2DeUsuario').classList.remove('inputErrorDeFormulario');
+//     document.getElementById('check-inputPass2DeUsuario').classList.remove('form-group-correcto-activo');
+//     document.getElementById('check-inputPass2DeUsuario').classList.add('form-group-correcto');
+//     (camposDelFormulario['inputPassDeUsuario']=false) ;
+
+    
+//    }
+
+   function claveCorrecta (){
     const inputPassword1 = document.getElementById('inputPassDeUsuario');
     const inputPassword2 = document.getElementById('inputPass2DeUsuario');
    
-
-   if (inputPassword1.value == inputPassword2.value && inputPassword2.value !==""){
-    document.getElementById('mensajeError-inputPass2DeUsuario').classList.remove('inputErrorDeFormulario-activo');
-    document.getElementById('mensajeError-inputPass2DeUsuario').classList.add('inputErrorDeFormulario');
-    document.getElementById('check-inputPass2DeUsuario').classList.add('form-group-correcto-activo');
-    document.getElementById('check-inputPass2DeUsuario').classList.remove('form-group-correcto');
-    (camposDelFormulario['inputPassDeUsuario']=true) ;
-     
-
-   } else {
-    document.getElementById('mensajeError-inputPass2DeUsuario').classList.add('inputErrorDeFormulario-activo');
+    
+    if(inputPassword1.value !== inputPassword2.value && inputPassword1.value!==''){
+        document.getElementById('mensajeError-inputPass2DeUsuario').classList.add('inputErrorDeFormulario-activo');
     document.getElementById('mensajeError-inputPass2DeUsuario').classList.remove('inputErrorDeFormulario');
     document.getElementById('check-inputPass2DeUsuario').classList.remove('form-group-correcto-activo');
     document.getElementById('check-inputPass2DeUsuario').classList.add('form-group-correcto');
     (camposDelFormulario['inputPassDeUsuario']=false) ;
+        
+        return false;
+    } else {
+        document.getElementById('mensajeError-inputPass2DeUsuario').classList.remove('inputErrorDeFormulario-activo');
+    document.getElementById('mensajeError-inputPass2DeUsuario').classList.add('inputErrorDeFormulario');
+    document.getElementById('check-inputPass2DeUsuario').classList.add('form-group-correcto-activo');
+    document.getElementById('check-inputPass2DeUsuario').classList.remove('form-group-correcto');
+    (camposDelFormulario['inputPassDeUsuario']=true) ;
 
-    
-   }
+
+        return true;
+    }
+    }
 
 
-}
+
+
+
+
+
 
 inputs.forEach((input)=>{
     input.addEventListener('keyup',validarFormularioDeRegistro);
-    input.addEventListener('blur',validarFormularioDeRegistro);
+    
 })
 
-formulario.addEventListener('submit',(e)=>{
-    validarPassword2();
-
-    const terminos= document.getElementById('terminos');
-
-    if(camposDelFormulario.nombre && camposDelFormulario.correo && camposDelFormulario.password && camposDelFormulario.telefono && terminos.prop('checked')){
-        formulario.reset();
-    } else{
-     document.getElementById('mensajeError-checked').classList.add('inputErrorDeFormulario-activo')
-     document.getElementById('mensajeError-checked').classList.remove('inputErrorDeFormulario')
-    }
-
-})
-
-
-
+// formulario.addEventListener('click',e=>{
+//     e.preventDefault();
+    
+//         if(camposDelFormulario.nombre && camposDelFormulario.correo && camposDelFormulario.password && camposDelFormulario.telefono && camposDelFormulario.terminos){
+            
+//             document.getElementById('mensajeError-formulario').classList.remove('inputErrorDeFormulario-activo');
+//             document.getElementById('exito-formulario').classList.add('inputExitoDeFormulario-activo');
+//             document.getElementById('exito-formulario').classList.remove('inputExitoDeFormulario');
+//             formulario.reset();
+            
+//         } else{    
+            
+//             document.getElementById('mensajeError-formulario').classList.remove('inputErrorDeFormulario');
+//          document.getElementById('mensajeError-formulario').classList.add('inputErrorDeFormulario-activo');};})
+        

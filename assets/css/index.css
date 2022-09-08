@@ -107,7 +107,7 @@ body{
     color: #df3f37;
     
 }
-.input
+
 .inputErrorDeFormulario p{
     margin: 0px;
 }
@@ -140,6 +140,14 @@ color: #df3f37;
 .fas ,.fa-check{
     color: #51e60d;
     display: none;
+}
+.inputExitoDeFormulario{
+    color: #51e60d;
+    display: none;
+}
+.inputExitoDeFormulario-activo{
+    color: #51e60d;
+    display: inline;
 }
 
 
