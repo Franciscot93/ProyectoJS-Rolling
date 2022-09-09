@@ -24,7 +24,7 @@
                 <div class="form-group mt-3  " id="nombreCompleto">
                     <label for="inputNombreDeUsuario">Nombre completo </label>
                     <i class="fa fa-user"></i>
-                    <input class="form-control formStyle mt-3 " name="inputNombreDeUsuario" maxlength="60" id="inputNombreDeUsuario" type="text" placeholder="Ingrese su nombre y apellido" required> <i id="check-inputNombreDeUsuario" class='mt-2 form-group-correcto float-end fas fa-check'></i>
+                    <input class="form-control formStyle mt-3 " name="inputNombreDeUsuario" maxlength="60" id="inputNombreDeUsuario" type="text" placeholder="Ingrese su nombre y apellido" > <i id="check-inputNombreDeUsuario" class='mt-2 form-group-correcto float-end fas fa-check'></i>
                     
                     <p id="mensajeError-inputNombreDeUsuario"class="inputErrorDeFormulario"> El nombre solo puede contener letras, espacios y acentos.</p><i class="fa-triangle-exclamation"></i>
                 </div>
@@ -32,21 +32,21 @@
                 <div class="form-group mt-3 " id="">
                     <label for="inputEmailDeUsuario">E-mail </label>
                     <i class="fa fa-envelope"></i>                    
-                    <input class="form-control formStyle mt-3 " maxlength="60" name="inputEmailDeUsuario" type="email" id="inputEmailDeUsuario" placeholder="Ingrese su correo" required><i id="check-inputEmailDeUsuario" class="form-group-correcto float-end fas fa-check"></i>
+                    <input class="form-control formStyle mt-3 " maxlength="60" name="inputEmailDeUsuario" type="email" id="inputEmailDeUsuario" placeholder="Ingrese su correo" ><i id="check-inputEmailDeUsuario" class="form-group-correcto float-end fas fa-check"></i>
                     
                     <p id="mensajeError-inputEmailDeUsuario" class="inputErrorDeFormulario"> Ingrese una direccion de e-mail valida.</p>
                 </div>                
                 <div class="form-group mt-3 " id="">
                     <label for="inputPhoneDeUsuario">Telefono movil </label>
                     <i class="fa fa-mobile"></i>
-                    <input class="form-control formStyle mt-3 " name="inputPhoneDeUsuario" type="tel" id="inputPhoneDeUsuario" placeholder="Ingrese su número de teléfono movil" minlength="10" maxlength="14" required><i id="check-inputPhoneDeUsuario" class=" form-group-correcto float-end fas fa-check"></i>
+                    <input class="form-control formStyle mt-3 " name="inputPhoneDeUsuario" type="tel" id="inputPhoneDeUsuario" placeholder="Ingrese su número de teléfono movil" minlength="10" maxlength="14" ><i id="check-inputPhoneDeUsuario" class=" form-group-correcto float-end fas fa-check"></i>
                     
                     <p id="mensajeError-inputPhoneDeUsuario" class="inputErrorDeFormulario"> Solo puede contener caracteres númericos. Ingrese un número de telefono valido por favor.</p>
                 </div>
                 <div class="form-group mt-3 " id="">
                     <label  for="inputPassDeUsuario">Pass </label>
                     <i class="fa fa-key"></i>
-                    <input class="form-control formStyle mt-3" oninput="claveCorrecta()" name="inputPassDeUsuario" type="password" id="inputPassDeUsuario" placeholder="***********" required maxlength="16" minlength="8"><i id="check-inputPassDeUsuario" class=" form-group-correcto float-end fas fa-check"></i>
+                    <input class="form-control formStyle mt-3" oninput="claveCorrecta()" name="inputPassDeUsuario" type="password" id="inputPassDeUsuario" placeholder="***********"  maxlength="16" minlength="8"><i id="check-inputPassDeUsuario" class=" form-group-correcto float-end fas fa-check"></i>
                     
                     <p id="mensajeError-inputPassDeUsuario"  class="inputErrorDeFormulario"> La contraseña debe tener un minimo de 8 y un maximo de 16 caracteres.</p>
                     
@@ -54,7 +54,7 @@
                 <div class="form-group mt-3 " id="">
                     <label  for="inputPass2DeUsuario">Repetir Pass </label>
                     
-                    <input class="form-control formStyle mt-3" name="inputPass2DeUsuario" id="inputPass2DeUsuario" type="password" placeholder="Repita su contraseña." required maxlength="16" minlength="8"><i id="check-inputPass2DeUsuario" class="form-group-correcto float-end fas fa-check"></i>
+                    <input class="form-control formStyle mt-3" name="inputPass2DeUsuario" id="inputPass2DeUsuario" type="password" placeholder="Repita su contraseña."  maxlength="16" minlength="8"><i id="check-inputPass2DeUsuario" class="form-group-correcto float-end fas fa-check"></i>
                     
                     <p id="mensajeError-inputPass2DeUsuario"  class="inputErrorDeFormulario"> Las contraseñas no coinciden.</p>
                 </div>
@@ -63,7 +63,7 @@
                     <div class="form-group mb-3 mt-3">
                         <label for="terminos" > Acepto los  </label> <a href="error404.html"> Terminos y condiciones</a>
                         
-                        <input class="input-group   mt-3" type="checkbox" name="terminos" id="terminos">
+                        <input class="input-group mt-3" value="aceptar" type="checkbox" name="terminos" id="terminos">
                         
                         <i id="checked-terminos" class=" form-group-correcto float-end fas fa-check"></i>
                         <p id="mensajeError-checked" class="inputErrorDeFormulario"> ¿Los has leído?</p>
@@ -72,11 +72,13 @@
                     <div class="form-group">
                     <button type="submit" id="btnRegistro" class="buttonForm mt-2"><i class="fa fa-sign-in" aria-hidden="true"></i> Registrate</button>
                     
-                    <p id="exito-formulario" class="inputExitoDeFormulario">Datos cargados exitosamente.</p>
+                    
                 </div>
+                <div class="form-gorup mt-3"><p id="exito-formulario" class="inputExitoDeFormulario">Se ha registrado exitosamente.</p></div>
                 
                 
             </form>
+            
             
             
             <div id="mensajeErrorDeForm" class="footer form-group mb-3 mt-3 "> <a class="form" href="./login.html">¿Ya tienes cuenta?</a>
