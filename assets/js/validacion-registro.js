@@ -3,6 +3,16 @@ const formulario = document.getElementById("formDeRegistro");
 const mensajeExito = document.getElementById("exito-formulario");
 const terminosValidacion = document.getElementById("terminos").checked;
 const inputs = document.querySelectorAll("#formDeRegistro input");
+document.getElementById('btnRegistro').disabled = false;
+const nombreDelUsuario = document.getElementById(
+  "inputNombreDeUsuario"
+);
+const emailDelUsuario = document.getElementById("inputEmailDeUsuario");
+const telefonoDelUsuario = document.getElementById(
+  "inputPhoneDeUsuario"
+);
+const passDelUsuario = document.getElementById("inputPassDeUsuario");
+const passDelUsuario2 = document.getElementById("inputPass2DeUsuario");
 
 const expresiones = {
   nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, //letras y espacios, pueden llevar acentos.
@@ -24,15 +34,7 @@ let id = 0;
 
 const validarFormularioDeRegistro = (e) => {
   e.preventDefault();
-  const nombreDelUsuario = document.getElementById(
-    "inputNombreDeUsuario"
-  ).value;
-  const emailDelUsuario = document.getElementById("inputEmailDeUsuario").value;
-  const telefonoDelUsuario = document.getElementById(
-    "inputPhoneDeUsuario"
-  ).value;
-  const passDelUsuario = document.getElementById("inputPassDeUsuario").value;
-  const passDelUsuario2 = document.getElementById("inputPass2DeUsuario").value;
+  
 
   switch (e.target.name) {
     case "inputNombreDeUsuario":
@@ -94,44 +96,15 @@ const validarFormularioDeRegistro = (e) => {
       }
       break;
   }
-
-  const btnRegistro = document
-    .getElementById("btnRegistro")
-    .addEventListener("click", (e) => {
-      registrarUsuario(e);
-    });
-
-  function registrarUsuario(e) {
-    e.preventDefault;
-
-    id++;
-
-    const nuevoUsuario = {
-      ID: id,
-      nombre: nombreDelUsuario,
-      correo: emailDelUsuario,
-      telefono: telefonoDelUsuario,
-      pass: passDelUsuario,
-    };
-
-    if (
-      camposDelFormulario.inputNombreDeUsuario &&
-      camposDelFormulario.inputEmailDeUsuario &&
-      camposDelFormulario.inputPass2DeUsuario &&
-      camposDelFormulario.inputPassDeUsuario &&
-      camposDelFormulario.inputPhoneDeUsuario &&
-      camposDelFormulario.terminos
-    ) {
-      console.log("va bien");
-      console.log(nuevoUsuario);
-    } else {
-      console.log("va mal");
-      console.log(nuevoUsuario);
-    }
+  
+  
+  
   }
-};
+;
 
 const validarInputDeRegistro = (expresiones, input, campo) => {
+
+  
   if (
     expresiones.test(input.value) &&
     input.value.trim() &&
@@ -152,6 +125,8 @@ const validarInputDeRegistro = (expresiones, input, campo) => {
       .getElementById(`check-${campo}`)
       .classList.remove("form-group-correcto-activo");
     camposDelFormulario[`${campo}`] = false;
+    
+    
   }
 };
 
@@ -194,12 +169,62 @@ function claveCorrecta() {
   }
 }
 
+ 
+const btnRegistro=document.getElementById('btnRegistro').addEventListener("click", () => registrarUsuario(nombreDelUsuario,emailDelUsuario,telefonoDelUsuario,passDelUsuario));
+
+
+
+  function registrarUsuario(nombreDelUsuario,emailDelUsuario,telefonoDelUsuario,passDelUsuario) {
+  e.preventDefault()
+    
+    if((
+      camposDelFormulario.inputNombreDeUsuario &&
+      camposDelFormulario.inputEmailDeUsuario &&
+      camposDelFormulario.inputPass2DeUsuario &&
+      camposDelFormulario.inputPassDeUsuario &&
+      camposDelFormulario.inputPhoneDeUsuario &&
+      camposDelFormulario.terminos
+    )){
+
+   
+
+    id++;
+
+    const nuevoUsuario = {
+      ID: id,
+      nombre: nombreDelUsuario.value,
+      correo: emailDelUsuario.value,
+      telefono: telefonoDelUsuario.value,
+      pass: passDelUsuario.value,
+    };
+
+    if (
+      camposDelFormulario.inputNombreDeUsuario &&
+      camposDelFormulario.inputEmailDeUsuario &&
+      camposDelFormulario.inputPass2DeUsuario &&
+      camposDelFormulario.inputPassDeUsuario &&
+      camposDelFormulario.inputPhoneDeUsuario &&
+      camposDelFormulario.terminos
+    ) {
+      document.getElementById('btnRegistro').disabled = true;
+      console.log("va bien");
+     
+      usuariosRegistrados.push(nuevoUsuario);
+      localStorage.setItem('usuario', )
+      
+    } else {
+      e.preventDefault();
+      
+      
+    }}else{e.preventDefault();
+      formulario.reset()}
+  }
+
 inputs.forEach((input) => {
-  input.addEventListener("keyup", validarFormularioDeRegistro);
+  input.addEventListener("submit", validarFormularioDeRegistro);
   input.addEventListener("blur", validarFormularioDeRegistro);
 });
 
-const enviarFormulario = () => {};
 formulario.addEventListener("submit", (e) => {
   e.preventDefault();
 
@@ -211,6 +236,7 @@ formulario.addEventListener("submit", (e) => {
     camposDelFormulario.inputPhoneDeUsuario &&
     camposDelFormulario.terminos
   ) {
+    
     document
       .getElementById("mensajeErrorDeForm")
       .classList.remove("inputErrorDeFormulario-activo");
@@ -236,14 +262,17 @@ formulario.addEventListener("submit", (e) => {
 
     document.querySelectorAll(".form-group-correcto-activo").forEach((i) => {
       i.classList.remove("form-group-correcto-activo");
+
+      
     });
   } else {
-    console.log(camposDelFormulario);
+    
     document
       .getElementById("mensajeErrorDeForm")
       .classList.add("inputErrorDeFormulario-activo");
     document
       .getElementById("mensajeErrorDeForm")
       .classList.remove("inputErrorDeFormulario");
+      formulario.reset()
   }
 });
