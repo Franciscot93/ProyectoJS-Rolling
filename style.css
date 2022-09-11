@@ -16,6 +16,7 @@
 }
 body{
     background-color: black;
+    
 }
 /* navbar */
 #Logo-navbar{
@@ -34,6 +35,10 @@ body{
 #btn-buscar{
     color: #473BF0;
     background-color: #9B9ECE;
+}
+.navbar-toggler-icon{
+    background-image: url();
+
 }
 /* fin navbar */
 
@@ -153,11 +158,11 @@ button:hover, .button:focus-visible{
     scale: 1.2;
     z-index: 1;
 }
-.titulos{
-    /* display: inline-block;
-    border: 1px solid #6665DD; */
-    /* max-width: min-content; */
-}
+/* .titulos{
+    display: inline-block;
+    border: 1px solid #6665DD;
+    max-width: min-content;
+} */
 .titulo-categoria{
     /* display:inline-block ; */
     margin: 0;
@@ -303,3 +308,57 @@ button:hover, .button:focus-visible{
     to{box-shadow: inset -3px 0px 0px transparent;}
 }
 /* Fin error 404 */
+
+/* acerca de nosotros */
+.logobanner{
+    margin: 0 auto;
+    width:max-content;
+}
+.banner--img{
+    height: 500px;
+    background-color:#6665DD;
+    border: solid #473BF0;
+    border-radius: 3rem;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+.contenido-boutus{
+    color: #efefef;
+}
+.our-team{
+    text-align: center;
+    margin-bottom: 20px;
+}
+.our-team .container--flex {
+align-items: flex-start;
+}
+.our-team--txt{
+    color: #473BF0;
+}
+.our-team--title {
+    color: #473BF0;
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+.our-team--img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: auto;
+    margin-bottom: 20px;
+}
+/* fin acerca de nosotros */
+
+/* administracion */
+.btnadmin{
+    max-width: 200px;
+    margin: 0 auto;
+    margin-bottom: 5rem;
+}
+#lista{
+    min-height: 70vh;
+    color:#efefef;
+}
+/* fin administracion */
