@@ -30,7 +30,7 @@ const camposDelFormulario = {
 };
 
 
-const cuentaAdministrador= {Usuario:'admin', Password: 12345678};
+const cuentaAdministrador= {Usuario:'admin@admin', Password: 12345678};
 localStorage.setItem( JSON.stringify(`${cuentaAdministrador.Usuario}`),JSON.stringify( `${cuentaAdministrador.Password}`));
 
 

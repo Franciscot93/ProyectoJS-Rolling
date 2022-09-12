@@ -18,20 +18,27 @@
     <header></header>
     
         <div class="container fluid">
-        <section  class=" modalContent text-center position-absolute top-50 start-50 translate-middle"aria-hidden="true">
+
+
+
+
+
+        <section  class=" modalContent text-center top-50 position-absolute  start-50 translate-middle"aria-hidden="true">
             <div class="header"><img class="rounded-circle imgLogin" src="./assets/IMG/img-login.gif" alt=""></div>
-            <form class="col-12" >
+            <form id="formLogin" class="col-12" >
                 <div class="form-group mt-3">
-                    <label for="ingresar">E-mail</label>
-                    <input class="form-control formStyle mt-3 " type="email" placeholder="Ingrese su correo" required>
+                    <label for="emailLogin">E-mail</label>
+                    <input class="form-control formStyle mt-3 " id="emailLogin" type="email" placeholder="Ingrese su correo" required>
                 </div>
                 <div class="form-group mt-3">
-                    <label  for="password">Pass</label>
-                    <input class="form-control formStyle mt-3 " type="password" placeholder="***********" required>
+                    <label  for="passwordLogin">Pass</label>
+                    <input class="form-control formStyle mt-3 " id="passwordLogin" type="password" placeholder="***********" required>
                 </div>
                 <div class="form-group mt-3">
                     
-                    <button class="buttonForm mt-1"><i class="fa fa-sign-in" aria-hidden="true"></i> Conectarse</button>
+                    <button id="btnLogin" class="buttonForm mt-3"><i class="fa fa-sign-in" aria-hidden="true"></i> Conectarse</button>
+
+                    <div class="footer msgLogin"></div>
                     
                 </div>
                 
@@ -40,7 +47,7 @@
                     <label for="saveAccount">Recordar mis datos</label><input class="input-group" type="checkbox" name="saveAccount" id="">
                 </div>
             <div class="footer"><div class="form-group  mb-3 mt-3">
-                <a href="">¿Olvidaste la contraseña?</a>
+                <a href="./error404.html">¿Olvidaste la contraseña?</a>
             
             </div>
         </section>
@@ -52,9 +59,10 @@
 </div>
 
 
-
-
-    <script src="./assets/js/index.js"></script>
+<script src="./assets/js/validacion-login.js"></script>
+<!-- <script src="./assets/js/validacion-registro.js"></script> -->
+    
+    
     <!-- JavaScript Bundle with Popper -->
     <script src="https://kit.fontawesome.com/564ebdd0f1.js" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
