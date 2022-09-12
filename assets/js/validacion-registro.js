@@ -29,7 +29,12 @@ const camposDelFormulario = {
   terminos: false,
 };
 
-const usuariosRegistrados = [];
+
+const cuentaAdministrador= {Usuario:'admin', Password: 12345678};
+localStorage.setItem( JSON.stringify(`${cuentaAdministrador.Usuario}`),JSON.stringify( `${cuentaAdministrador.Password}`));
+
+
+const usuariosRegistrados = JSON.parse(localStorage.getItem([]));
 let id = 0;
 
 const validarFormularioDeRegistro = (e) => {
@@ -175,7 +180,7 @@ const btnRegistro=document.getElementById('btnRegistro').addEventListener("click
 
 
   function registrarUsuario(nombreDelUsuario,emailDelUsuario,telefonoDelUsuario,passDelUsuario) {
-  e.preventDefault()
+  
     
     if((
       camposDelFormulario.inputNombreDeUsuario &&
@@ -208,9 +213,10 @@ const btnRegistro=document.getElementById('btnRegistro').addEventListener("click
     ) {
       document.getElementById('btnRegistro').disabled = true;
       console.log("va bien");
-     
-      usuariosRegistrados.push(nuevoUsuario);
-      localStorage.setItem('usuario', )
+      localStorage.setItem(JSON.stringify(`${nuevoUsuario.correo}`),JSON.stringify (`${nuevoUsuario.pass}`) );
+    
+      
+      
       
     } else {
       e.preventDefault();
