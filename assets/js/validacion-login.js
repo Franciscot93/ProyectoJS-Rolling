@@ -41,6 +41,7 @@ if(emailLogin.value===''|| passwordLogin.value===''){
     }, 2000); 
     emailLogin.value='';
     passwordLogin.value='';
+    
 }
 
 
