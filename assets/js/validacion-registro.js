@@ -13,11 +13,11 @@ const telefonoDelUsuario = document.getElementById(
 );
 const passDelUsuario = document.getElementById("inputPassDeUsuario");
 const passDelUsuario2 = document.getElementById("inputPass2DeUsuario");
-let id = 0;
 
 
-class Usuario{ builder(id, nombreDelUsuario, emailDelUsuario,telefonoDelUsuario,passDelUsuario){
-  this.id=id;
+
+class Usuario{ builder( nombreDelUsuario, emailDelUsuario,telefonoDelUsuario,passDelUsuario){
+  
   this.nombre=nombreDelUsuario;
   this.correo=emailDelUsuario;
   this.telefono=telefonoDelUsuario;
@@ -184,13 +184,13 @@ function claveCorrecta() {
 }
 
  
-const btnRegistro=document.getElementById('btnRegistro').addEventListener("click", (e) => registrarUsuario(e,id,nombreDelUsuario,emailDelUsuario,telefonoDelUsuario,passDelUsuario));
+const btnRegistro=document.getElementById('btnRegistro').addEventListener("click", (e) => registrarUsuario(e,nombreDelUsuario,emailDelUsuario,telefonoDelUsuario,passDelUsuario));
 
 
 
-  function registrarUsuario(e,id,nombreDelUsuario,emailDelUsuario,telefonoDelUsuario,passDelUsuario) {
+  function registrarUsuario(e,nombreDelUsuario,emailDelUsuario,telefonoDelUsuario,passDelUsuario) {
   
-    e.preventDefault
+    e.preventDefault()
     if((
       camposDelFormulario.inputNombreDeUsuario &&
       camposDelFormulario.inputEmailDeUsuario &&
@@ -202,14 +202,14 @@ const btnRegistro=document.getElementById('btnRegistro').addEventListener("click
 
    
 
-    id++;
+    
 
     let nuevoUsuario = {  
-     ID:id.value,
-     nombre:nombreDelUsuario.value,
-     correo:emailDelUsuario.value,
-      telefono: telefonoDelUsuario.value,
-       pass:passDelUsuario.value
+     
+    nombre:nombreDelUsuario.value,
+    correo:emailDelUsuario.value,
+    telefono: telefonoDelUsuario.value,
+    pass:passDelUsuario.value
     };
 
     if (
@@ -220,7 +220,7 @@ const btnRegistro=document.getElementById('btnRegistro').addEventListener("click
       camposDelFormulario.inputPhoneDeUsuario &&
       camposDelFormulario.terminos
     ) {
-      document.getElementById('btnRegistro').disabled = true;
+      document.getElementById('btnRegistro').disabled = false;
       console.log("va bien");
 
       usuariosRegistrados.push(nuevoUsuario)
@@ -234,35 +234,7 @@ const btnRegistro=document.getElementById('btnRegistro').addEventListener("click
           .classList.remove("inputExitoDeFormulario-activo");
         formulario.reset();
       }, 4000);
-      
-      
-      
-    } else {
-      e.preventDefault();
-      
-      
-    }}else{e.preventDefault();
-      formulario.reset()}
-  }
-
-inputs.forEach((input) => {
-  input.addEventListener("keyup", validarFormularioDeRegistro);
-  input.addEventListener("blur", validarFormularioDeRegistro);
-});
-
-formulario.addEventListener("submit", (e) => {
-  e.preventDefault();
-
-  if (
-    camposDelFormulario.inputNombreDeUsuario &&
-    camposDelFormulario.inputEmailDeUsuario &&
-    camposDelFormulario.inputPass2DeUsuario &&
-    camposDelFormulario.inputPassDeUsuario &&
-    camposDelFormulario.inputPhoneDeUsuario &&
-    camposDelFormulario.terminos
-  ) {
-    
-    document
+      document
       .getElementById("mensajeErrorDeForm")
       .classList.remove("inputErrorDeFormulario-activo");
     document
@@ -289,15 +261,30 @@ formulario.addEventListener("submit", (e) => {
       i.classList.remove("form-group-correcto-activo");
 
       
-    });
-  } else {
-    
-    document
+    })
+      nombreDelUsuario.value='';
+      emailDelUsuario.value='';
+      telefonoDelUsuario.value='';
+      passDelUsuario.value='';
+      passDelUsuario2.value='';
+      terminosValidacion.checked='';
+      
+    } else {
+      
+      document
       .getElementById("mensajeErrorDeForm")
       .classList.add("inputErrorDeFormulario-activo");
     document
       .getElementById("mensajeErrorDeForm")
       .classList.remove("inputErrorDeFormulario");
-      formulario.reset()
+      
+    }}else{e.preventDefault();
+      formulario.reset()}
   }
+
+inputs.forEach((input) => {
+  input.addEventListener("keyup", validarFormularioDeRegistro);
+  input.addEventListener("blur", validarFormularioDeRegistro);
 });
+
+
