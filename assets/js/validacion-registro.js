@@ -40,7 +40,7 @@ const camposDelFormulario = {
 };
 
 
-const cuentaAdministrador= {ID:'admin',nombre:'admin',correo:'admin@admin',telefono:3333333333, pass: 12345678};
+const cuentaAdministrador= {ID:'admin',nombre:'admin',correo:'admin@admin',telefono:3333333333, pass: '12345678'};
 
 
 const usuariosRegistrados = JSON.parse(localStorage.getItem('user'))|| [cuentaAdministrador];
