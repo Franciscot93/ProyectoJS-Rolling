@@ -13,6 +13,16 @@ const telefonoDelUsuario = document.getElementById(
 );
 const passDelUsuario = document.getElementById("inputPassDeUsuario");
 const passDelUsuario2 = document.getElementById("inputPass2DeUsuario");
+let id = 0;
+
+
+class Usuario{ builder(id, nombreDelUsuario, emailDelUsuario,telefonoDelUsuario,passDelUsuario){
+  this.id=id;
+  this.nombre=nombreDelUsuario;
+  this.correo=emailDelUsuario;
+  this.telefono=telefonoDelUsuario;
+  this.pass=passDelUsuario
+}}
 
 const expresiones = {
   nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, //letras y espacios, pueden llevar acentos.
@@ -30,12 +40,11 @@ const camposDelFormulario = {
 };
 
 
-const cuentaAdministrador= {Usuario:'admin@admin', Password: 12345678};
-localStorage.setItem( JSON.stringify(`${cuentaAdministrador.Usuario}`),JSON.stringify( `${cuentaAdministrador.Password}`));
+const cuentaAdministrador= {ID:'admin',nombre:'admin',correo:'admin@admin',telefono:3333333333, pass: 12345678};
 
 
-const usuariosRegistrados = JSON.parse(localStorage.getItem([]));
-let id = 0;
+const usuariosRegistrados = JSON.parse(localStorage.getItem('user'))|| [cuentaAdministrador];
+
 
 const validarFormularioDeRegistro = (e) => {
   e.preventDefault();
@@ -175,13 +184,13 @@ function claveCorrecta() {
 }
 
  
-const btnRegistro=document.getElementById('btnRegistro').addEventListener("click", () => registrarUsuario(nombreDelUsuario,emailDelUsuario,telefonoDelUsuario,passDelUsuario));
+const btnRegistro=document.getElementById('btnRegistro').addEventListener("click", (e) => registrarUsuario(e,id,nombreDelUsuario,emailDelUsuario,telefonoDelUsuario,passDelUsuario));
 
 
 
-  function registrarUsuario(nombreDelUsuario,emailDelUsuario,telefonoDelUsuario,passDelUsuario) {
+  function registrarUsuario(e,id,nombreDelUsuario,emailDelUsuario,telefonoDelUsuario,passDelUsuario) {
   
-    
+    e.preventDefault
     if((
       camposDelFormulario.inputNombreDeUsuario &&
       camposDelFormulario.inputEmailDeUsuario &&
@@ -195,12 +204,12 @@ const btnRegistro=document.getElementById('btnRegistro').addEventListener("click
 
     id++;
 
-    const nuevoUsuario = {
-      ID: id,
-      nombre: nombreDelUsuario.value,
-      correo: emailDelUsuario.value,
+    let nuevoUsuario = {  
+     ID:id.value,
+     nombre:nombreDelUsuario.value,
+     correo:emailDelUsuario.value,
       telefono: telefonoDelUsuario.value,
-      pass: passDelUsuario.value,
+       pass:passDelUsuario.value
     };
 
     if (
@@ -213,8 +222,18 @@ const btnRegistro=document.getElementById('btnRegistro').addEventListener("click
     ) {
       document.getElementById('btnRegistro').disabled = true;
       console.log("va bien");
-      localStorage.setItem(JSON.stringify(`${nuevoUsuario.correo}`),JSON.stringify (`${nuevoUsuario.pass}`) );
+
+      usuariosRegistrados.push(nuevoUsuario)
+      localStorage.setItem('user',JSON.stringify(usuariosRegistrados) );
     
+
+
+      setTimeout(() => {
+        document
+          .getElementById("exito-formulario")
+          .classList.remove("inputExitoDeFormulario-activo");
+        formulario.reset();
+      }, 4000);
       
       
       
@@ -227,7 +246,7 @@ const btnRegistro=document.getElementById('btnRegistro').addEventListener("click
   }
 
 inputs.forEach((input) => {
-  input.addEventListener("submit", validarFormularioDeRegistro);
+  input.addEventListener("keyup", validarFormularioDeRegistro);
   input.addEventListener("blur", validarFormularioDeRegistro);
 });
 
@@ -259,12 +278,12 @@ formulario.addEventListener("submit", (e) => {
     document
       .getElementById("exito-formulario")
       .classList.add("inputExitoDeFormulario-activo");
-    setTimeout(() => {
+   
       document
         .getElementById("exito-formulario")
         .classList.remove("inputExitoDeFormulario-activo");
       formulario.reset();
-    }, 4000);
+    ;
 
     document.querySelectorAll(".form-group-correcto-activo").forEach((i) => {
       i.classList.remove("form-group-correcto-activo");
