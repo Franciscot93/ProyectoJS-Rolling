@@ -1,7 +1,12 @@
-body{
+body {
     font-family:'Comfortaa', cursive;
+    background-color: #000500;
+    
 }
-
+#all{
+    background-color: #000500;
+}
+section{background-color: #000500;}
 
 .modalContent{
     position: relative;
@@ -16,12 +21,14 @@ body{
     padding: 0 100px ;
     background-color: #000500;
     font-weight: 700;
-    margin-top: 150px;
+    margin-top: 100px;
+    margin-bottom: 50px;
     opacity: 0.95;
     font-family:'Comfortaa', cursive;
     font-size: 20px;
     margin-bottom:500px;
 }
+
 .modalContentRegistro{
     position: relative;
     display: inline-block;
@@ -78,6 +85,7 @@ body{
 
 .imgLogin {
     contain: content;
+    
     margin-top: -75px;
     margin-bottom: 25px;
     border-color: #473BF0;
@@ -106,25 +114,26 @@ body{
     color: #df3f37;
     
 }
-.input
+
 .inputErrorDeFormulario p{
     margin: 0px;
 }
 
 
 .inputErrorDeFormulario-activo{
+    margin-top: 4px;
     display: block;
     color: #df3f37;
 }
 
-@media only screen and (min-width: 768px) {
+/* @media only screen and (min-width: 768px) {
     section {
         width: 30em;
     }
    
     
    
-}
+} */
 
 
 .form-group a {
@@ -139,12 +148,27 @@ color: #df3f37;
     color: #51e60d;
     display: none;
 }
+.inputExitoDeFormulario{
+    color: #51e60d;
+    display: none;
+}
+.inputExitoDeFormulario-activo{
+    color: #51e60d;
+    display: block;
+}
 
 
 
 .form-group-correcto{
     opacity: 0;
 }
-.form-group-correcto .activo{
+.form-group-correcto-activo{
     opacity: 1;
 }
+
+.msgLogin{
+    display: none;
+}
+
+
+
