@@ -261,7 +261,7 @@ const btnRegistro=document.getElementById('btnRegistro').addEventListener("click
       i.classList.remove("form-group-correcto-activo");
 
       
-    })
+    },2000)
       nombreDelUsuario.value='';
       emailDelUsuario.value='';
       telefonoDelUsuario.value='';
