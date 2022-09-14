@@ -16,6 +16,8 @@ const nuevaMoviePublicado = document.getElementById('publicado');
 const nuevaMovieModalMensaje = document.getElementById('modalMensaje')
 const lista = document.getElementById('listadepeliculas')
 
+
+
 const nuevaMovie = () => {   
    const movie = {
       codigo: nuevaMovieCodigo.value,
@@ -36,6 +38,7 @@ const nuevaMovie = () => {
    nuevaMoviePublicado.value ="";
 
    nuevaMovieModalMensaje.innerHTML = 'Agregado!';
+   console.log(movie);
    actualizarLista();
 }
 
@@ -58,8 +61,8 @@ const actualizarLista = () => {
             <div class="col"> <h3> ${p.descripcion}</h3> </div>
             <div class="col"> <h3> ${p.publicado}</h3> </div>
             <div class="col"> 
-              <button onclick= "delMovie(${p.codigo})"> <i class="fa-solid fa-trash"></i> </button>
-              <button> <i class="fa-solid fa-pen-to-square"></i> </button>
+              <button id= "delMovie(${p.codigo})"> <i class="fa-solid fa-trash"></i> </button>
+              <button id= "edit(${p.codigo})" type="button" data-bs-toggle="modal" data-bs-target="#editModal"> <i class="fa-solid fa-pen-to-square"></i> </button>
               <button> <i class="fa-solid fa-star"></i> </button>
             </div>` ; 
             lista.appendChild(onemovie);
@@ -68,6 +71,11 @@ const actualizarLista = () => {
                 .addEventListener('click',() =>
                 delMovie(p)
                 );
+            const button2 = document
+                .getElementById(`edit(${p.codigo})`)
+                .addEventListener('click', () =>
+                editMovie(p)
+                );    
     });
 };
 
@@ -79,4 +87,42 @@ const delMovie = movie => {
         JSON.stringify(movies)
     );
     actualizarLista();
+}
+
+//selecciono inputs de modal
+const editMoviebutton = document.getElementById('editmoviebutton')
+.addEventListener("click", ()=> editMovie()
+);
+
+const editCodigo = document.getElementById('editCodigo');
+const editNombre = document.getElementById('editNombre');
+const editCategoria = document.getElementById('editCategoria');
+const editDescripcion = document.getElementById('editDescripcion');
+const editPublicado = document.getElementById('editPublicado');
+const editImagen = document.getElementById('editImagen');
+
+//Edicion de pelicula
+const editMovie = movie => {
+    //completo modal
+    editCodigo.value = movie.codigo;
+    editNombre.value = movie.nombre;
+    editCategoria.value = movie.categoria;
+    editDescripcion.value = movie.descripcion;
+    editPublicado.value = movie.publicado;
+    editImagen.value = movie.imagen;
+    //same as nuevamovie
+    const movieEditada = {
+        codigo: editCodigo.value,
+        nombre: editNombre.value,
+        categoria: editCategoria.value,
+        descripcion: editDescripcion.value,
+        publicado: editPublicado.value,
+     };
+  
+     movies.push(movieEditada);
+     localStorage.setItem('movies', 
+     JSON.stringify(movies));
+  
+     nuevaMovieModalMensaje.innerHTML = 'Agregado!';
+     actualizarLista();
 }

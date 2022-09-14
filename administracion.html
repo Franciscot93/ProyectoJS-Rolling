@@ -71,12 +71,12 @@
     </button>
     </div>
 
-    <!-- Modal -->
+    <!-- Modal 1 -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <h5 class="modal-title" id="exampleModalLabel">Nueva Pelicula</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
@@ -101,6 +101,10 @@
                   <h3>Publicado</h3>
                   <input type="text"  id="publicado" required>
                 </div>
+                <div class="categoria-modal">
+                  <h3>URL Imagen</h3>
+                  <input type="text"  id="imagen" required>
+                </div>
             </div>
           </div>
           <div class="modal-footer">
@@ -111,6 +115,53 @@
         </div>
       </div>
     </div>
+    <!-- fin modal 1 -->
+
+    <!-- modal 2 -->
+    <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Editar pelicula</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="modalinner">
+                <div class="categoria-modal">
+                  <h3>Codigo</h3>
+                  <input type="text" id="editCodigo" required>
+                </div>
+                <div class="categoria-modal">
+                  <h3>Nombre</h3>
+                  <input type="text"  id="editNombre" required>
+                </div>
+                <div class="categoria-modal" >
+                  <h3>Categoria</h3>
+                  <input type="text" id="editCategoria" required>
+                </div>
+                <div class="categoria-modal" >
+                  <h3>Descripcion</h3>
+                  <input type="text" id="editDescripcion" required>
+                </div>
+                <div class="categoria-modal">
+                  <h3>Publicado</h3>
+                  <input type="text"  id="editPublicado" required>
+                </div>
+                <div class="categoria-modal">
+                  <h3>URL Imagen</h3>
+                  <input type="text"  id="editImagen" required>
+                </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <div id="modalMensaje"></div>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            <button id="editmoviebutton" type="button" class="btn btn-primary">Guardar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- fin modal 2 -->
 
 
 
