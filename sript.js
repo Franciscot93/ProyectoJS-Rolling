@@ -123,6 +123,6 @@ const editMovie = movie => {
      localStorage.setItem('movies', 
      JSON.stringify(movies));
   
-     nuevaMovieModalMensaje.innerHTML = 'Agregado!';
+     nuevaMovieModalMensaje.innerHTML = 'Editado!';
      actualizarLista();
 }
