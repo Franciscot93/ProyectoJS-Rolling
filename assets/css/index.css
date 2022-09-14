@@ -1,7 +1,12 @@
-body{
+body {
     font-family:'Comfortaa', cursive;
+    background-color: #000500;
+    
 }
-
+#all{
+    background-color: #000500;
+}
+section{background-color: #000500;}
 
 .modalContent{
     position: relative;
@@ -120,14 +125,14 @@ body{
     color: #df3f37;
 }
 
-@media only screen and (min-width: 768px) {
+/* @media only screen and (min-width: 768px) {
     section {
         width: 30em;
     }
    
     
    
-}
+} */
 
 
 .form-group a {
