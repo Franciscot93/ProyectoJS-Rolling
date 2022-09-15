@@ -10,7 +10,7 @@ section{background-color: #000500;}
 
 .modalContent{
     position: relative;
-    display: inline-block;
+    display: block;
     width: 50%;
     color: #473BF0;
     border:5px solid #473BF0;
@@ -21,12 +21,12 @@ section{background-color: #000500;}
     padding: 0 100px ;
     background-color: #000500;
     font-weight: 700;
-    margin-top: 100px;
-    margin-bottom: 50px;
+    margin-top: 500px;
+    
     opacity: 0.95;
     font-family:'Comfortaa', cursive;
     font-size: 20px;
-    margin-bottom:500px;
+    
 }
 
 .modalContentRegistro{
@@ -46,6 +46,7 @@ section{background-color: #000500;}
     opacity: 0.95;
     font-family:'Comfortaa', cursive;
     font-size: 20px;
+    margin-top: 600px;
 }
 /* .modalDs {
     background-color: #000500;
@@ -79,13 +80,14 @@ section{background-color: #000500;}
     border-radius: 7px;
     width: 100%;
     padding: 10px;
+    
 
 }
 
 
 .imgLogin {
     contain: content;
-    
+    position: relative;
     margin-top: -75px;
     margin-bottom: 25px;
     border-color: #473BF0;
@@ -124,17 +126,105 @@ section{background-color: #000500;}
     margin-top: 4px;
     display: block;
     color: #df3f37;
+
 }
 
-/* @media only screen and (min-width: 768px) {
-    section {
-        width: 30em;
-    }
-   
+@media only screen and (min-width:1024px) {
     
-   
-} */
+        
+    .modalContentRegistro{
+       min-width: 70%;
 
+    }
+    .modalContent{
+        
+        min-width: 70%;
+    }     
+    
+  }
+  @media only screen and (max-width:1024px) {
+    
+        
+    .modalContentRegistro{
+       min-width: 90%;
+
+    }
+    .modalContent{
+        
+        min-width: 90%;
+    }     
+    
+  }
+
+@media only screen and (max-width: 768px) {
+    .imgLogin{
+        display:none ;    }
+        
+    .modalContentRegistro{
+       min-width: 90%;
+
+    }
+    .modalContent{
+        
+        min-width: 90%;
+    }     
+  }
+
+  @media only screen and (max-width:445px) {
+    .imgLogin{
+        display: none;    }
+        
+    .modalContentRegistro ,form{
+       min-width: 90%;
+
+    }
+    .modalContent{
+        
+        min-width: 90%;
+    }     
+    #formLogin{
+        min-width: 90%;
+             }
+    
+  }
+  @media only screen and (max-width:400px) {
+    
+        
+    .modalContentRegistro{
+       min-width: 90%;
+
+    }
+    .modalContent{
+        
+        min-width: 90%;
+    }     
+     #formLogin{
+min-width: 90%;
+     }
+     .buttonForm{
+        min-width: 90%;
+     }
+  }
+
+  @media only screen and (max-width:360px) {
+    
+        
+    .modalContentRegistro{
+       min-width: 90%;
+
+    }
+    .modalContent{
+        
+        min-width: 90%;
+    }     
+     #formLogin{
+min-width: 90%;
+     }
+     .buttonForm{
+        min-width: 90%;
+        
+     }
+  }
 
 .form-group a {
     text-decoration: none;

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/style.css">
     <link rel="stylesheet" href="./assets/css/index.css" />
+    <link rel="stylesheet" href="style.css">
     <link
       rel="stylesheet"
       type="text"
@@ -28,13 +29,84 @@
     <title>registro para proyecto</title>
   </head>
   <body id="all" >
-    <header></header>
+    <section>
+      <!-- Inicio Navbar -->
+      <nav
+        class="navbar sticky-top navbar-expand-lg navbar-dark bs-black"
+        id="nav"
+      >
+        <div class="class container-fluid">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarTogglerDemo01"
+            aria-controls="navbarTogglerDemo01"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <a class="navbar-brand" href=""
+            ><img src="Logo white.jpg" id="Logo-navbar" alt="Logo"
+          /></a>
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item active" id="nav-titulo">
+                <a class="nav-link" href="/index.html">Inicio</a>
+              </li>
 
+              <li class="nav-item">
+                <a class="nav-link" href="#" onclick="accesoLogin()">Log-In</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="/registro.html">Registrate!</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+                <button class="btn btn-outline" id="btn-buscar" type="submit">Buscar</button>
+              </form>
+          </div>
+        </div>
+      </nav>
+
+      <!-- <nav class="navbar navbar-expand-lg bg-dark">
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+            <a class="navbar-brand" href="#">Hidden brand</a>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled">Disabled</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav> -->
+    </section>
+    <!-- Fin Navbar -->
+
+
+    <!--  inicio formulario de registro -->
     <section
-      class="modalContentRegistro text-center position-absolute top-50 start-50 translate-middle"
+      class="modalContentRegistro text-center position-relative  start-50 translate-middle"
       aria-hidden="true"
     >
-      <div class="header">
+      <div class="header text-center">
         <img
           class="rounded-pill imgLogin"
           src="./assets/IMG/img-registro.gif"
@@ -208,7 +280,50 @@
       </div>
     </section>
 
-    <footer></footer>
+    <!-- Fin de formulario -->
+
+     <!-- footer -->
+     <section>
+      <div class="containerfootercont">
+        <footer class="pie-pagina">
+          <div class="grupo-1">
+            <div class="box">
+              <figure>
+                <a href="/index.html">
+                  <img src="Logo white.jpg" alt="fotologo" />
+                </a>
+              </figure>
+            </div>
+            <div class="box">
+              <a href="/acercade.html" class="nounderline"
+                ><h2>¿QUIÉNES SOMOS?</h2></a
+              >
+              <p>
+                Somos una empresa completamente pirata que trae las mejores
+                peliculas a tu pantalla!
+              </p>
+              <p>¡La pelicula que buscas esta aqui!</p>
+            </div>
+            <div class="box">
+              <h2>SÍGUENOS</h2>
+              <div class="red-social">
+                <a href="/error404.html" class="fa fa-facebook"></a>
+                <a href="/error404.html" class="fa fa-instagram"></a>
+                <a href="/error404.html" class="fa fa-twitter"></a>
+                <a href="/error404.html" class="fa fa-youtube"></a>
+              </div>
+            </div>
+          </div>
+          <div class="grupo-2">
+            <small class="text-small-grupo-2"
+              >&copy; 2022 Rolling Movies - Todos los Derechos
+              Reservados.</small
+            >
+          </div>
+        </footer>
+      </div>
+    </section>
+    <!-- footer -->
 
     
     <script src="./assets/js/validacion-registro.js"></script>
