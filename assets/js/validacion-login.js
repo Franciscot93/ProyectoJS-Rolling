@@ -4,8 +4,14 @@ const emailLogin = document.getElementById("emailLogin");
 const passwordLogin = document.getElementById("passwordLogin");
 const btnLogin = document.getElementById("btnLogin");
 const mensajeLogin = document.getElementById("msgLogin");
+const accesoLogin=()=>{ window.location.href="/login.html"}
+const saveAccount= document.getElementById('saveAccount').checked;
 
 ;
+
+
+
+
 const formLogin = document
   .getElementById("formLogin")
   .addEventListener("submit", (e) => loginUser(e));
@@ -39,8 +45,18 @@ if(emailLogin.value===''|| passwordLogin.value===''){
 }else if((validarUserRegistrado.find(user=>user.correo===emailLogin.value).pass=== passwordLogin.value)){
     mensajeLogin.classList.add('inputExitoDeFormulario-activo');
     mensajeLogin.classList.remove('msgLogin');
-    emailLogin.value='';
-    passwordLogin.value='';
+
+    if (!saveAccount.checked) {
+        emailLogin.value= emailLogin.value;
+        passwordLogin.value= passwordLogin.value;
+    
+      } else {
+        emailLogin.value='';
+        passwordLogin.value='';
+      }
+    
+      
+    
     
     mensajeLogin.innerHTML=`<p>Validando datos ingresados.</p>`
     setTimeout(() => {
@@ -48,6 +64,7 @@ if(emailLogin.value===''|| passwordLogin.value===''){
     }, 2000); 
     
     setTimeout(() => {
+        
         window.location.href="/administracion.html"
     }, 4000); 
     

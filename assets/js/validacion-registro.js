@@ -16,13 +16,7 @@ const passDelUsuario2 = document.getElementById("inputPass2DeUsuario");
 
 
 
-class Usuario{ builder( nombreDelUsuario, emailDelUsuario,telefonoDelUsuario,passDelUsuario){
-  
-  this.nombre=nombreDelUsuario;
-  this.correo=emailDelUsuario;
-  this.telefono=telefonoDelUsuario;
-  this.pass=passDelUsuario
-}}
+
 
 const expresiones = {
   nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, //letras y espacios, pueden llevar acentos.
@@ -40,7 +34,7 @@ const camposDelFormulario = {
 };
 
 
-const cuentaAdministrador= {ID:'admin',nombre:'admin',correo:'admin@admin',telefono:3333333333, pass: '12345678'};
+const cuentaAdministrador= {nombre:'admin',correo:'admin@admin.com',telefono:3333333333, pass: '12345678'};
 
 
 const usuariosRegistrados = JSON.parse(localStorage.getItem('user'))|| [cuentaAdministrador];
@@ -225,16 +219,13 @@ const btnRegistro=document.getElementById('btnRegistro').addEventListener("click
 
       usuariosRegistrados.push(nuevoUsuario)
       localStorage.setItem('user',JSON.stringify(usuariosRegistrados) );
-    
-
-
-      setTimeout(() => {
-        document
-          .getElementById("exito-formulario")
-          .classList.remove("inputExitoDeFormulario-activo");
-        formulario.reset();
-      }, 4000);
+    setTimeout(()=>{
       document
+      .getElementById("exito-formulario")
+      .classList.add("inputExitoDeFormulario-activo");
+    },1000);
+
+    document
       .getElementById("mensajeErrorDeForm")
       .classList.remove("inputErrorDeFormulario-activo");
     document
@@ -257,11 +248,22 @@ const btnRegistro=document.getElementById('btnRegistro').addEventListener("click
       formulario.reset();
     ;
 
+
+      setTimeout(() => {
+        document
+          .getElementById("exito-formulario")
+          .classList.remove("inputExitoDeFormulario-activo");
+        formulario.reset();
+
+        window.location.href="/login.html"
+      }, 4000);
+      
+
     document.querySelectorAll(".form-group-correcto-activo").forEach((i) => {
       i.classList.remove("form-group-correcto-activo");
 
       
-    },2000)
+    },4000)
       nombreDelUsuario.value='';
       emailDelUsuario.value='';
       telefonoDelUsuario.value='';
