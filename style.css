@@ -19,6 +19,9 @@ body{
     overflow-x: hidden;
     
 }
+#pDetalle{
+    color: #ACADBC;
+}
 /* navbar */
 #Logo-navbar{
     height: 90px;
