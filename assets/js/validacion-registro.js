@@ -16,13 +16,7 @@ const passDelUsuario2 = document.getElementById("inputPass2DeUsuario");
 
 
 
-class Usuario{ builder( nombreDelUsuario, emailDelUsuario,telefonoDelUsuario,passDelUsuario){
-  
-  this.nombre=nombreDelUsuario;
-  this.correo=emailDelUsuario;
-  this.telefono=telefonoDelUsuario;
-  this.pass=passDelUsuario
-}}
+
 
 const expresiones = {
   nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, //letras y espacios, pueden llevar acentos.
@@ -296,4 +290,3 @@ inputs.forEach((input) => {
 });
 
 
-const accesoLogin=()=>{ window.location.href="/login.html"}
