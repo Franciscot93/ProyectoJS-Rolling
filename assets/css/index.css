@@ -28,7 +28,28 @@ section {
   padding: 0 100px;
   background-color: #000500;
   font-weight: 700;
-  margin-top: 500px;
+  margin-top: 400px;
+
+  opacity: 0.95;
+  font-family: "Comfortaa", cursive;
+  font-size: 20px;
+}
+
+
+.modalContentContacto {
+  position: relative;
+  display: block;
+  width: 50%;
+  color: #473bf0;
+  border: 5px solid #473bf0;
+  border-radius: 35px;
+  box-shadow: 0px 8px 20px #acadbc;
+  justify-content: center;
+  align-items: center;
+  padding: 0 100px;
+  background-color: #000500;
+  font-weight: 700;
+  margin-top: 570px;
 
   opacity: 0.95;
   font-family: "Comfortaa", cursive;
@@ -121,6 +142,9 @@ section {
   .modalContentRegistro {
     min-width: 90%;
   }
+  .modalContentContacto {
+    min-width: 90%;
+  }
   .modalContent {
     min-width: 90%;
   }
@@ -129,6 +153,9 @@ section {
 @media only screen and (max-width: 768px) {
   .imgLogin {
     display: none;
+  }
+  .modalContentContacto {
+    min-width: 90%;
   }
 
   .modalContentRegistro {
@@ -154,9 +181,15 @@ section {
   #formLogin {
     min-width: 90%;
   }
+  .modalContentContacto {
+    min-width: 90%;
+  }
 }
 @media only screen and (max-width: 400px) {
   .modalContentRegistro {
+    min-width: 90%;
+  }
+  .modalContentContacto {
     min-width: 90%;
   }
   .modalContent {
@@ -172,6 +205,9 @@ section {
 
 @media only screen and (max-width: 360px) {
   .modalContentRegistro {
+    min-width: 90%;
+  }
+  .modalContentContacto {
     min-width: 90%;
   }
   .modalContent {
