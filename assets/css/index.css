@@ -1,150 +1,287 @@
-body{
-    font-family:'Comfortaa', cursive;
+body {
+  font-family: "Comfortaa", cursive;
+  background-color: #000500;
+}
+#all {
+  background-color: #000500;
+}
+section {
+  background-color: #000500;
+}
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Comfortaa", "Montserrat", sans-serif;
+}
+
+.modalContent {
+  position: relative;
+  display: block;
+  width: 50%;
+  color: #473bf0;
+  border: 5px solid #473bf0;
+  border-radius: 35px;
+  box-shadow: 0px 8px 20px #acadbc;
+  justify-content: center;
+  align-items: center;
+  padding: 0 100px;
+  background-color: #000500;
+  font-weight: 700;
+  margin-top: 400px;
+
+  opacity: 0.95;
+  font-family: "Comfortaa", cursive;
+  font-size: 20px;
 }
 
 
-.modalContent{
-    position: relative;
-    display: inline-block;
-    width: 50%;
-    color: #473BF0;
-    border:5px solid #473BF0;
-    border-radius: 35px;
-    box-shadow: 0px 8px 20px #ACADBC;
-    justify-content: center;
-    align-items: center;
-    padding: 0 100px ;
-    background-color: #000500;
-    font-weight: 700;
-    margin-top: 150px;
-    opacity: 0.95;
-    font-family:'Comfortaa', cursive;
-    font-size: 20px;
-    margin-bottom:500px;
-}
-.modalContentRegistro{
-    position: relative;
-    display: inline-block;
-    width: 55%;
-    color: #473BF0;
-    border:5px solid #473BF0;
-    border-radius: 35px;
-    box-shadow: 0px 8px 20px #ACADBC;
-    justify-content: center;
-    align-items: center;
-    padding: 0 100px ;
-    background-color: #000500;
-    font-weight: 700;
-    margin-top: 150px;
-    opacity: 0.95;
-    font-family:'Comfortaa', cursive;
-    font-size: 20px;
-}
-/* .modalDs {
-    background-color: #000500;
-    opacity: 0.95;
-   padding: 0 100px;
-    border-radius: 35px;
-    box-shadow: 0px 8px 20px #ACADBC;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    
-    color: #473BF0;
-    border: 3px solid #473BF0;
-    
-    
-} */
+.modalContentContacto {
+  position: relative;
+  display: block;
+  width: 50%;
+  color: #473bf0;
+  border: 5px solid #473bf0;
+  border-radius: 35px;
+  box-shadow: 0px 8px 20px #acadbc;
+  justify-content: center;
+  align-items: center;
+  padding: 0 100px;
+  background-color: #000500;
+  font-weight: 700;
+  margin-top: 570px;
 
-
-
-.formStyle {position:relative
+  opacity: 0.95;
+  font-family: "Comfortaa", cursive;
+  font-size: 20px;
 }
-   
+
+.modalContentRegistro {
+  position: relative;
+  display: inline-block;
+  width: 55%;
+  color: #473bf0;
+  border: 5px solid #473bf0;
+  border-radius: 35px;
+  box-shadow: 0px 8px 20px #acadbc;
+  justify-content: center;
+  align-items: center;
+  padding: 0 100px;
+  background-color: #000500;
+  font-weight: 700;
+  margin-top: 150px;
+  opacity: 0.95;
+  font-family: "Comfortaa", cursive;
+  font-size: 20px;
+  margin-top: 600px;
+}
+
+.formStyle {
+  position: relative;
+}
 
 .buttonForm {
-
-    background-color: #473BF0;
-    color: #f9f9fd;
-    font-weight: 400;
-    border-color: #9B9ECE;
-    border-radius: 7px;
-    width: 100%;
-    padding: 10px;
-
+  background-color: #473bf0;
+  color: #f9f9fd;
+  font-weight: 400;
+  border-color: #9b9ece;
+  border-radius: 7px;
+  width: 100%;
+  padding: 10px;
 }
-
 
 .imgLogin {
-    contain: content;
-    margin-top: -75px;
-    margin-bottom: 25px;
-    border-color: #473BF0;
-    border: 5px solid #473BF0;
-    box-shadow: 0px 4px 30px #ACADBC
+  contain: content;
+  position: relative;
+  margin-top: -75px;
+  margin-bottom: 25px;
+  border-color: #473bf0;
+  border: 5px solid #473bf0;
+  box-shadow: 0px 4px 30px #acadbc;
 }
 
-
 .buttonForm:hover {
-    background-color: #1a1c35;
-    color: #51e60d;
+  background-color: #1a1c35;
+  color: #51e60d;
 
-    border: 2px solid #473BF0;
-    transition: 0.3s;
+  border: 2px solid #473bf0;
+  transition: 0.3s;
 }
 
 .buttonForm:active {
-    background-color: #1a1c35;
-    color: #51e60d;
+  background-color: #1a1c35;
+  color: #51e60d;
 
-    border: 2px solid #473BF0;
-    transition: 0.3s;
+  border: 2px solid #473bf0;
+  transition: 0.3s;
 }
-.inputErrorDeFormulario{
+.inputErrorDeFormulario {
+  display: none;
+  color: #df3f37;
+}
+
+.inputErrorDeFormulario p {
+  margin: 0px;
+}
+
+.inputErrorDeFormulario-activo {
+  margin-top: 4px;
+  display: block;
+  color: #df3f37;
+}
+
+@media only screen and (min-width: 1024px) {
+  .modalContentRegistro {
+    min-width: 70%;
+  }
+  .modalContent {
+    min-width: 70%;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .modalContentRegistro {
+    min-width: 90%;
+  }
+  .modalContentContacto {
+    min-width: 90%;
+  }
+  .modalContent {
+    min-width: 90%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .imgLogin {
     display: none;
-    color: #df3f37;
-    
-}
-.input
-.inputErrorDeFormulario p{
-    margin: 0px;
-}
+  }
+  .modalContentContacto {
+    min-width: 90%;
+  }
 
-
-.inputErrorDeFormulario-activo{
-    display: block;
-    color: #df3f37;
-}
-
-@media only screen and (min-width: 768px) {
-    section {
-        width: 30em;
-    }
-   
-    
-   
+  .modalContentRegistro {
+    min-width: 90%;
+  }
+  .modalContent {
+    min-width: 90%;
+  }
 }
 
+@media only screen and (max-width: 445px) {
+  .imgLogin {
+    display: none;
+  }
+
+  .modalContentRegistro,
+  form {
+    min-width: 90%;
+  }
+  .modalContent {
+    min-width: 90%;
+  }
+  #formLogin {
+    min-width: 90%;
+  }
+  .modalContentContacto {
+    min-width: 90%;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .modalContentRegistro {
+    min-width: 90%;
+  }
+  .modalContentContacto {
+    min-width: 90%;
+  }
+  .modalContent {
+    min-width: 90%;
+  }
+  #formLogin {
+    min-width: 90%;
+  }
+  .buttonForm {
+    min-width: 90%;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .modalContentRegistro {
+    min-width: 90%;
+  }
+  .modalContentContacto {
+    min-width: 90%;
+  }
+  .modalContent {
+    min-width: 90%;
+  }
+  #formLogin {
+    min-width: 90%;
+  }
+  .buttonForm {
+    min-width: 90%;
+  }
+}
 
 .form-group a {
-    text-decoration: none;
-    color: #9B9ECE;}
-
-.iconoDeError{
-color: #df3f37;
-    }
-
-.fas ,.fa-check{
-    color: #51e60d;
-    display: none;
+  text-decoration: none;
+  color: #9b9ece;
 }
 
-
-
-.form-group-correcto{
-    opacity: 0;
+.iconoDeError {
+  color: #df3f37;
 }
-.form-group-correcto .activo{
-    opacity: 1;
+
+.fas,
+.fa-check {
+  color: #51e60d;
+  display: none;
+}
+.inputExitoDeFormulario {
+  color: #51e60d;
+  display: none;
+}
+.inputExitoDeFormulario-activo {
+  color: #51e60d;
+  display: block;
+}
+
+.form-group-correcto {
+  opacity: 0;
+}
+.form-group-correcto-activo {
+  opacity: 1;
+}
+
+.msgLogin {
+  display: none;
+}
+
+.contactoSet {
+  font-family: "Comfortaa", cursive;
+  color: #9b9ece;
+}
+
+.check-nombreContacto {
+  color: #51e60d;
+  display: none;
+}
+.check-emailContacto {
+  color: #51e60d;
+  display: none;
+}
+.check-textoContacto {
+  color: #51e60d;
+  display: none;
+}
+
+.check-nombreContacto-activo {
+  color: #51e60d;
+  display: block;
+}
+.check-emailContacto-activo {
+  color: #51e60d;
+  display: block;
+}
+.check-textoContacto-activo {
+  color: #51e60d;
+  display: block;
 }

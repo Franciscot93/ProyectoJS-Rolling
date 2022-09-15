@@ -16,7 +16,11 @@
 }
 body{
     background-color: black;
+    overflow-x: hidden;
     
+}
+#pDetalle{
+    color: #ACADBC;
 }
 /* navbar */
 #Logo-navbar{
