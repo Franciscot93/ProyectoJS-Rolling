@@ -1,6 +1,6 @@
 const nombreContacto= document.getElementById('nombreContacto');
 const emailContacto= document.getElementById('emailContacto');
-const textoContacto= document.getElementById('textoContacto');
+
 const msgError=document.getElementById('msgErrorContacto');
 const inputsContacto= document.querySelectorAll('#formContacto input ');
 const formContacto= document.getElementById('formContacto');
@@ -62,7 +62,7 @@ const validarFormularioContacto = (e) => {
       break;
     
     case "textoContacto":
-      // validacionTextArea();
+      validacionTextArea();
       break;}};
 
 
@@ -81,7 +81,7 @@ const validarInputContacto = (expresionesContacto, input, campo) => {
     document
       .getElementById(`mensajeError-${campo}`)
       .classList.remove("inputErrorDeFormulario-activo");
-       camposContacto[`${campo}`] = false;
+       camposContacto[`${campo}`] = true;
        return false;
     
   } else {
@@ -91,13 +91,13 @@ const validarInputContacto = (expresionesContacto, input, campo) => {
     document
       .getElementById(`check-${campo}`)
       .classList.remove("form-group-correcto-activo");
-       camposContacto[`${campo}`] = true;
+       camposContacto[`${campo}`] = false;
        return true
     
     
   }
 };
-
+const textoContacto= document.getElementById('textoContacto');
 
 const validacionTextArea=()=>{
    if(textoContacto.value===""){
@@ -107,7 +107,7 @@ const validacionTextArea=()=>{
   document
     .getElementById(`check-textoContacto`)
     .classList.remove("form-group-correcto-activo");
-    camposContacto.texto=false;
+    camposContacto.textoContacto=false;
     return false;
    }else{
     document
@@ -116,7 +116,7 @@ const validacionTextArea=()=>{
   document
     .getElementById(`mensajeError-textoContacto`)
     .classList.remove("inputErrorDeFormulario-activo");
-    camposContacto.texto=true;
+    camposContacto.textoContacto=true;
     return true;
    }}
     
@@ -143,13 +143,25 @@ inputsContacto.forEach((input) => {
       if((camposContacto.nombreContacto && camposContacto.emailContacto && camposContacto.textoContacto)){
        
        console.log(camposContacto);
-        //       setTimeout(()=>{
+              setTimeout(()=>{
         
-        //         console.log(camposContacto);
+                
              
+        mensajeErrorFormContacto.innerHTML=`<p id="mensajeErrorDeForm" class="form-group-correcto-activo mt-3 mb-3">
+        <i class="fa fa-exclamation-triangle"></i> procesando...
+      </p>`
         
-        
-        // },2000)
+         },2000)
+
+        setTimeout(()=>{
+          mensajeErrorFormContacto.innerHTML=`<p id="mensajeErrorDeForm" class="inputExitoDeFormulario-activo mt-3 mb-3">
+          <i class="fa fa-exclamation-triangle"></i> Mensaje enviado con éxito!
+        </p>`
+        },3000);
+        setTimeout(()=>{
+         formContacto.reset();
+        },3500)
+
 
       }else{
 
