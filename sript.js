@@ -62,7 +62,7 @@ const actualizarLista = () => {
             <div class="col"> <h3> ${p.publicado}</h3> </div>
             <div class="col"> 
               <button id= "delMovie(${p.codigo})"> <i class="fa-solid fa-trash"></i> </button>
-              <button id= "edit(${p.codigo})" type="button" data-bs-toggle="modal" data-bs-target="#editModal"> <i class="fa-solid fa-pen-to-square"></i> </button>
+              <button id= "editMovie(${p.codigo})" type="button" data-bs-toggle="modal" data-bs-target="#editModal"> <i class="fa-solid fa-pen-to-square"></i> </button>
               <button> <i class="fa-solid fa-star"></i> </button>
             </div>` ; 
             lista.appendChild(onemovie);
@@ -72,7 +72,7 @@ const actualizarLista = () => {
                 delMovie(p)
                 );
             const button2 = document
-                .getElementById(`edit(${p.codigo})`)
+                .getElementById(`editMovie(${p.codigo})`)
                 .addEventListener('click', () =>
                 editMovie(p)
                 );    
@@ -91,7 +91,7 @@ const delMovie = movie => {
 
 //selecciono inputs de modal
 const editMoviebutton = document.getElementById('editmoviebutton')
-.addEventListener("click", ()=> editMovie()
+.addEventListener("click", ()=> editMovie2()
 );
 
 const editCodigo = document.getElementById('editCodigo');
@@ -103,6 +103,7 @@ const editImagen = document.getElementById('editImagen');
 
 //Edicion de pelicula
 const editMovie = movie => {
+    console.log(movie);
     //completo modal
     editCodigo.value = movie.codigo;
     editNombre.value = movie.nombre;
@@ -118,11 +119,8 @@ const editMovie = movie => {
         descripcion: editDescripcion.value,
         publicado: editPublicado.value,
      };
-  
-     movies.push(movieEditada);
-     localStorage.setItem('movies', 
-     JSON.stringify(movies));
-  
-     nuevaMovieModalMensaje.innerHTML = 'Editado!';
-     actualizarLista();
+};
+
+const editMovie2 = movie => {
+    
 }
