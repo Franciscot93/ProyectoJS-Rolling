@@ -95,19 +95,21 @@ button:hover, .button:focus-visible{
     /* overflow: scroll; */
     opacity: 1;
     max-height: 500px;
+    
 }
 .carrusel-fila--inner{
     display: inline-block;
     transition: 350ms transform;
     /* font-size: 0; */
-    white-space: nowrap;
+    white-space: wrap;
     margin: auto 0;
     padding-bottom: 3rem;  
     padding-top: 3rem;
     max-height: 700px;
     align-items: center;
     justify-content: center;
-}
+    
+   }
 .carrusel-fila--item{
     display: inline-block;
     background-color: gray;
